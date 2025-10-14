@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Marche Solidaire 🐾</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", Arial, sans-serif;
+      background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+      color: #333;
+    }
+
+    header {
+      text-align: center;
+      padding: 60px 20px 40px;
+      background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%);
+      color: white;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.3rem;
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      margin-top: -40px;
+      position: relative;
+      z-index: 10;
+    }
+
+    h2 {
+      text-align: center;
+      color: #ff6b6b;
+    }
+
+    .info {
+      text-align: center;
+      font-size: 1.1rem;
+      margin-bottom: 40px;
+      line-height: 1.6;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      width: 80%;
+      margin: 0 auto;
+    }
+
+    input, select, button {
+      padding: 12px 15px;
+      border-radius: 10px;
+      border: 2px solid #ffd6a5;
+      font-size: 1rem;
+      outline: none;
+      transition: 0.2s;
+    }
+
+    input:focus {
+      border-color: #ff9a76;
+    }
+
+    button {
+      background-color: #ff6b6b;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      border: none;
+    }
+
+    button:hover {
+      background-color: #ff8e72;
+    }
+
+    .spa-section {
+      text-align: center;
+      background: #fceabb;
+      border-radius: 20px;
+      padding: 30px 20px;
+      margin-top: 40px;
+    }
+
+    .spa-section h3 {
+      color: #ff6b6b;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: #84fab0;
+      color: white;
+      margin-top: 40px;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+    }
+
+    .emoji {
+      font-size: 1.5rem;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      section {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>🐾 Marche Solidaire 🐾</h1>
+    <p>Rejoignez-nous à Saint-Just Saint-Rambert le <strong>7 décembre</strong> pour une balade pleine de solidarité et d’amour animal ❤️</p>
+  </header>
+
+  <section>
+    <h2>Informations</h2>
+    <div class="info">
+      <p><strong>📍 Lieu :</strong> Saint-Just Saint-Rambert</p>
+      <p><strong>📅 Date :</strong> 7 décembre 2025</p>
+      <p><strong>🐕 Distance :</strong> 4 km, accessible à tous les chiens et familles</p>
+      <p><strong>💰 Tarifs :</strong> 5€ en prévente – 8€ sur place</p>
+      <p><strong>🎯 Objectif :</strong> Collecte de fonds pour la SPA de Saint-Étienne</p>
+    </div>
+
+    <h2>Préinscription</h2>
+    <form id="preinscriptionForm">
+      <input type="text" id="nom" name="nom" placeholder="Nom" required>
+      <input type="text" id="prenom" name="prenom" placeholder="Prénom" required>
+      <input type="email" id="email" name="email" placeholder="Adresse e-mail" required>
+      <input type="number" id="participants" name="participants" placeholder="Nombre de participants" min="1" required>
+      <button type="submit">Envoyer ma préinscription 💌</button>
+    </form>
+
+    <div id="confirmationMessage" style="display:none; text-align:center; margin-top:20px; color:#4CAF50; font-weight:bold;">
+      ✅ Merci pour votre préinscription ! À très bientôt pour la marche solidaire 🐶
+    </div>
+
+    <div class="spa-section">
+      <h3>🐾 Soutenons ensemble la SPA de Saint-Étienne 🐾</h3>
+      <p>Chaque inscription aide à nourrir, soigner et protéger les animaux recueillis. Ensemble, faisons une vraie différence ❤️</p>
+    </div>
+  </section>
+
+  <footer>
+    <p class="emoji">🌈🐕🐾 Merci de marcher pour la bonne cause 🐾🐕🌈</p>
+    <p>© 2025 Marche Solidaire – Saint-Just Saint-Rambert</p>
+  </footer>
+
+  <script>
+  const form = document.getElementById("preinscriptionForm");
+  const confirmation = document.getElementById("confirmationMessage");
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const data = {
+      nom: document.getElementById("nom").value,
+      prenom: document.getElementById("prenom").value,
+      email: document.getElementById("email").value,
+      participants: document.getElementById("participants").value
+    };
+
+    fetch("https://script.google.com/macros/s/AKfycbxboYU3i2j84NvQAC2v2QDV5_UA5mgHp0_5LCDCO698I7zjWkKbGfbn8QttUlCHNuTzTA/exec", {
+      method: "POST",
+      body: JSON.stringify(data)
+    })
+    .then(response => {
+      if (response.ok) {
+        confirmation.style.display = "block";
+        form.reset();
+      } else {
+        alert("Erreur lors de l'envoi du formulaire.");
+      }
+    })
+    .catch(error => {
+      alert("Erreur réseau : " + error);
+    });
+  });
+</script>
+
+</body>
+</html>
+
