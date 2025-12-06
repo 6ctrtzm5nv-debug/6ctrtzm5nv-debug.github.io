@@ -1,198 +1,193 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Marche Solidaire — Merci</title>
-<style>
-  /* Reset léger */
-  html,body{margin:0;padding:0;height:100%;}
-  body{
-    font-family: "Arial", sans-serif;
-    background-color:#f6f6f6;
-    color:#222;
-    -webkit-font-smoothing:antialiased;
-    -moz-osx-font-smoothing:grayscale;
-    line-height:1.4;
-  }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Marche Solidaire 🐾 — Merci</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", Arial, sans-serif;
+      background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+      color: #333;
+    }
 
-  .wrapper{
-    max-width:650px;
-    margin:32px auto;
-    background:white;
-    border-radius:10px;
-    box-shadow: 0 6px 24px rgba(0,0,0,0.08);
-    overflow:hidden;
-  }
+    header {
+      text-align: center;
+      padding: 60px 20px 40px;
+      background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%);
+      color: white;
+    }
 
-  .header{
-    background: linear-gradient(90deg, #0d6efd 0%, #4f8cff 100%);
-    color:white;
-    padding:20px;
-    display:flex;
-    align-items:center;
-    gap:12px;
-  }
+    header h1 {
+      font-size: 2.6rem;
+      margin-bottom: 10px;
+    }
 
-  .logos{
-    display:flex;
-    gap:10px;
-    align-items:center;
-  }
+    header p {
+      font-size: 1.1rem;
+      margin: 0;
+    }
 
-  .logo{
-    height:44px;
-    width:auto;
-    display:block;
-  }
+    section {
+      padding: 50px 20px;
+      max-width: 840px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      margin-top: -40px;
+      position: relative;
+      z-index: 10;
+    }
 
-  .title{
-    font-size:20px;
-    font-weight:700;
-    margin:0;
-  }
+    h2 {
+      text-align: center;
+      color: #ff6b6b;
+      margin-top: 0;
+    }
 
-  .hero{
-    padding:36px 28px;
-    text-align:center;
-  }
+    .info {
+      text-align: center;
+      font-size: 1.05rem;
+      margin-bottom: 30px;
+      line-height: 1.6;
+    }
 
-  .hero h1{
-    margin:0 0 12px 0;
-    font-size:28px;
-    color:#1b1b1b;
-  }
+    .closed-badge {
+      display: inline-block;
+      background: #ffecec;
+      color: #b12b2b;
+      border: 1px solid #f5c6c6;
+      padding: 10px 18px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      margin-bottom: 18px;
+    }
 
-  .hero p{
-    margin:0 0 18px 0;
-    font-size:16px;
-    color:#444;
-  }
+    .thank {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: #1b1b1b;
+      margin: 12px 0 8px 0;
+    }
 
-  .closed-badge{
-    display:inline-block;
-    background:#ffecec;
-    color:#b12b2b;
-    border:1px solid #f5c6c6;
-    padding:10px 16px;
-    border-radius:999px;
-    font-weight:700;
-    font-size:14px;
-    margin-bottom:14px;
-  }
+    .sub {
+      color: #555;
+      margin-bottom: 18px;
+    }
 
-  .info{
-    padding:0 28px 28px 28px;
-    color:#333;
-  }
+    .cta {
+      text-align: center;
+      margin-top: 18px;
+    }
 
-  .info ul{
-    padding-left:18px;
-  }
+    .btn {
+      display: inline-block;
+      text-decoration: none;
+      padding: 12px 18px;
+      border-radius: 12px;
+      font-weight: 700;
+      background: #ff6b6b;
+      color: white;
+    }
 
-  .cta{
-    text-align:center;
-    padding:16px 28px 36px 28px;
-  }
+    .btn[aria-disabled="true"]{
+      background:#ffd6d6;
+      color:#8a3b3b;
+      cursor:not-allowed;
+      pointer-events:none;
+    }
 
-  .btn{
-    display:inline-block;
-    text-decoration:none;
-    padding:12px 20px;
-    border-radius:8px;
-    font-weight:700;
-    background:#0d6efd;
-    color:white;
-    border:0;
-  }
+    .note {
+      margin-top: 14px;
+      font-size: 0.95rem;
+      color: #666;
+    }
 
-  .btn[aria-disabled="true"]{
-    background:#cfdcff;
-    color:#6b6f86;
-    cursor:not-allowed;
-  }
+    .spa-section {
+      text-align: center;
+      background: #fceabb;
+      border-radius: 16px;
+      padding: 24px 20px;
+      margin-top: 30px;
+    }
 
-  .small{
-    font-size:13px;
-    color:#666;
-    margin-top:10px;
-  }
+    .spa-section h3 {
+      color: #ff6b6b;
+      margin: 0 0 8px 0;
+    }
 
-  .footer{
-    background:#fafafa;
-    padding:18px 24px;
-    font-size:13px;
-    color:#666;
-    display:flex;
-    justify-content:space-between;
-    gap:12px;
-    align-items:center;
-  }
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: #84fab0;
+      color: white;
+      margin-top: 36px;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+    }
 
-  .socials a{
-    margin-left:8px;
-    text-decoration:none;
-    color:#0d6efd;
-    font-weight:700;
-  }
+    .emoji {
+      font-size: 1.2rem;
+    }
 
-  @media (max-width:480px){
-    .header{padding:14px;}
-    .hero{padding:28px 18px;}
-    .info, .cta {padding:0 18px 18px 18px;}
-  }
-</style>
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.8rem;
+      }
+      section {
+        width: 92%;
+        padding: 30px 16px;
+      }
+    }
+  </style>
 </head>
 <body>
-  <div class="wrapper" role="main" aria-labelledby="main-title">
-    <div class="header">
-      <div style="flex:1; display:flex; align-items:center; gap:12px;">
-        <!-- Remplace les src par tes images -->
-        <div class="logos" aria-hidden="false">
-          <img src="logo-eklya.png" alt="Logo Eklya" class="logo" />
-          <img src="logo-spa.png" alt="Logo SPA" class="logo" />
-        </div>
-        <div style="flex:1;">
-          <h2 class="title">Marche Solidaire — Merci à tous !</h2>
-        </div>
+
+  <header>
+    <h1>🐾 Marche Solidaire 🐾</h1>
+    <p>Saint-Just Saint-Rambert — <strong>7 décembre 2025</strong></p>
+  </header>
+
+  <section role="main" aria-labelledby="infos-title">
+    <h2 id="infos-title">Informations</h2>
+
+    <div class="info" aria-live="polite">
+      <p class="closed-badge" aria-hidden="true">Pré-inscriptions fermées</p>
+      <div class="thank">Merci pour votre enthousiasme et votre soutien ! ✨</div>
+      <div class="sub">
+        Nous sommes très touchés par votre mobilisation. Les pré-inscriptions sont désormais closes — 
+        si vous étiez intéressé·e, merci de nous écrire pour que nous puissions noter votre intérêt pour la prochaine édition.
+      </div>
+
+      <div style="max-width:680px; margin: 0 auto; text-align:left;">
+        <p><strong>📍 Lieu :</strong> Saint-Just Saint-Rambert</p>
+        <p><strong>📅 Date :</strong> 7 décembre 2025</p>
+        <p><strong>🐕 Distance :</strong> 4 km, accessible à tous les chiens et familles</p>
+        <p><strong>💰 Tarifs :</strong> 5€ en prévente – 8€ sur place</p>
+        <p><strong>🎯 Objectif :</strong> Collecte de fonds pour la SPA de Saint-Étienne</p>
+      </div>
+
+      <div class="cta">
+        <!-- Bouton inactif pour montrer l'action possible -->
+        <a class="btn" href="#" aria-disabled="true">Pré-inscriptions (fermées)</a>
+        <div class="note">Pour toute question ou pour proposer votre aide (bénévolat, dons, partenaires) : <a href="mailto:contact@tonassociation.fr">contact@tonassociation.fr</a></div>
+        <div class="note">Les personnes déjà inscrites recevront une confirmation par e-mail avec toutes les informations pratiques.</div>
       </div>
     </div>
 
-    <section class="hero" id="main-title">
-      <div class="closed-badge" aria-hidden="true">Pré-inscriptions fermées</div>
-      <h1>Merci pour votre enthousiasme ✨</h1>
-      <p>Nous sommes extrêmement touchés par votre mobilisation. Grâce à vous, cette édition de la marche solidaire promet d'être mémorable.</p>
-      <div style="max-width:520px;margin:18px auto 0 auto;">
-        <!-- Bouton d'action (désactivé) -->
-        <a class="btn" href="#" aria-disabled="true" onclick="return false;">Pré-inscriptions (fermées)</a>
-        <div class="small">Si vous étiez intéressé(e) à vous inscrire, merci de contacter <a href="mailto:contact@tonassociation.fr">contact@tonassociation.fr</a> — nous noterons votre intérêt pour la prochaine édition.</div>
-      </div>
-    </section>
-
-    <div class="info" aria-label="Informations complémentaires">
-      <p><strong>Que se passe-t-il maintenant ?</strong></p>
-      <ul>
-        <li>Nous finalisons l'organisation — équipes, parcours et partenaires.</li>
-        <li>Les personnes déjà inscrites recevront un e-mail de confirmation avec toutes les informations pratiques (horaires, point de rendez-vous, consignes).</li>
-      </ul>
-
-      <p style="margin-top:12px;"><strong>Photos & résultats</strong> — Après la marche, nous publierons les photos et un compte-rendu sur notre page Facebook et Instagram.</p>
+    <div class="spa-section" aria-label="Soutien à la SPA">
+      <h3>🐾 Soutenons la SPA de Saint-Étienne</h3>
+      <p>Chaque participation aide à nourrir, soigner et protéger les animaux recueillis. Merci de marcher avec nous pour leur bien-être ❤️</p>
     </div>
+  </section>
 
-    <div class="cta" role="region" aria-label="Call to action">
-      <a class="btn" href="#" onclick="window.location.href='https://www.tonsite.fr'; return false;">Voir le site de l'événement</a>
-      <div class="small">Tu peux aussi suivre notre actualité sur les réseaux ci-dessous pour ne rien rater.</div>
-    </div>
+  <footer>
+    <p class="emoji">🌈🐕🐾 Merci de marcher pour la bonne cause 🐾🐕🌈</p>
+    <p>© 2025 Marche Solidaire – Saint-Just Saint-Rambert</p>
+  </footer>
 
-    <div class="footer" aria-hidden="false">
-      <div>© <strong>Marche Solidaire</strong> — Tous droits réservés</div>
-      <div style="display:flex; align-items:center; gap:12px;">
-        <div class="socials">Suivez-nous :
-          <a href="#" aria-label="Facebook">Facebook</a>
-          <a href="#" aria-label="Instagram">Instagram</a>
-        </div>
-      </div>
-    </div>
-  </div>
 </body>
 </html>
